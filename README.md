@@ -1,2 +1,2 @@
 # aula-git-devops
-Material para aula de Git integrando conceitos de Devops
+Material para aula de Git integrando conceitos de Devops usando monorepo
