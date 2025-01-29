@@ -65,6 +65,20 @@ app.get("/protected", (req, res) => {
   }
 });
 
+// Exemplo de Injeção de SQL - Vulnerabilidade
+app.get("/usuario/:id", (req, res) => {
+  const id = req.params.id;
+  const query = `SELECT * FROM usuarios WHERE id = ${id}`;
+
+  db.all(query, (err, rows) => {
+    if (err) {
+      res.status(500).send("Erro no banco de dados");
+      return;
+    }
+    res.json(rows);
+  });
+});
+
 // Iniciar o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
